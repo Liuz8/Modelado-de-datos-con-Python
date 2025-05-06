@@ -1,4 +1,3 @@
-from matplotlib import pyplot as plt
 from random import choice
 
 estudiantes_2 = ["Juan", 'Maria', 'José', 'Erica']
