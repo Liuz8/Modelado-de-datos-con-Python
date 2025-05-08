@@ -106,9 +106,107 @@ print(f'El estudiante obtuvo una media de {media}, con la mayor nota de {maximo}
 # Normalizar nombres y apellidos y crear una nueva lista con los nombres completos
 # Puedes apoyarte en la función map()
 
-nombres = ["juan", "MaRia", "JOSÉ"]
+"""nombres = ["juan", "MaRia", "JOSÉ"]
 apellidos = ["SILVA", "sosa", "Tavares"]
 
 lista = list(map(lambda nombre, apellido: f"{nombre.capitalize()} {apellido.capitalize()}", nombres, apellidos))
 
-print(lista)
+print(lista)"""
+
+#8 - Como científico de datos en un equipo de fútbol, necesitas implementar nuevas formas de recopilación de datos sobre el rendimiento de los 
+# jugadores y del equipo en su conjunto. 
+# Tu primera acción es crear una forma de calcular la puntuación del equipo en el campeonato nacional a partir de los datos de goles marcados y recibidos en cada juego.
+
+#Escribe una función llamada calcula_puntos() que recibe como parámetros dos listas de números enteros, representando los goles marcados y recibidos por 
+# el equipo en cada partido del campeonato. 
+# La función debe devolver la puntuación del equipo y el rendimiento en porcentaje, teniendo en cuenta que la victoria vale 3 puntos,
+#  el empate 1 punto y la derrota 0 puntos.
+
+#Nota: si la cantidad de goles marcados en un partido es mayor que los recibidos, el equipo ganó. En caso de ser igual,
+#  el equipo empató, y si es menor, el equipo perdió. 
+# Para calcular el rendimiento, debemos hacer la razón entre la puntuación del equipo y la puntuación máxima que podría recibir.
+
+#Para la prueba, utiliza las siguientes listas de goles marcados y recibidos:
+
+#goles_marcados = [2, 1, 3, 1, 0]
+#goles_recibidos = [1, 2, 2, 1, 3]
+# Texto probablemente mostrado:
+# La puntuación del equipo fue `puntos` y su rendimiento fue `desempeno`%"
+
+"""goles_marcados = [2, 1, 3, 1, 0]
+goles_recibidos = [1, 2, 2, 1, 3]
+
+def calcula_puntos(lista1: list, lista2: list):
+    puntos = 0
+    for gol_marcado, gol_recibido in zip(lista1, lista2):
+        if gol_marcado > gol_recibido:
+            puntos += 3
+        elif gol_marcado == gol_recibido:
+            puntos += 1
+    promedio = (puntos/15)*100
+    return puntos, promedio
+
+puntos, promedio = calcula_puntos(goles_marcados, goles_recibidos)
+
+print(f'La puntuacion del equipo fue {puntos} y su rendimiento fue {round(promedio, 2)}%')"""
+
+#9 - Te han desafiado a crear un código que calcule los gastos de un viaje a una de las cuatro ciudades desde Recife, 
+# siendo ellas: Salvador, Fortaleza, Natal y Aracaju.
+
+#El costo diario del hotel es de 150 reales en todas ellas y el consumo de gasolina en el viaje en coche es de 14 km/l, 
+# siendo que el precio de la gasolina es de 5 reales por litro. 
+# Los gastos con paseos y alimentación a realizar en cada una de ellas por día serían [200, 400, 250, 300], respectivamente.
+
+#Sabiendo que las distancias entre Recife y cada una de las ciudades son aproximadamente [850, 800, 300, 550] km, crea tres funciones: 
+# la primera función calcula los gastos de hotel (gasto_hotel), la segunda calcula los gastos de gasolina (gasto_gasolina) y la tercera los gastos de paseo y 
+# alimentación (gasto_paseo).
+
+#Para probar, simula un viaje de 3 días a Salvador desde Recife. Considera el viaje de ida y vuelta en coche.
+
+# Texto probablemente mostrado:
+# Con base en los gastos definidos, un viaje de [dias] días a [ciudad] desde 
+# Recife costaría [gastos] reales.
+
+dias = int(input('Ingresa los dias que quieres irte de vacaciones: '))
+destino = int(input('Ingresa 1: para Salvador, 2: Fortaleza, 3: Natal y 4: Aracaju. '))
+
+def gasto_hotel(dias):
+    precio_hotel = dias * 150
+    return precio_hotel
+
+def gasto_gasolina(destino):
+    if destino == 1:
+        precio_gasolina = (850*2/14)*5
+    elif destino == 2:
+        precio_gasolina = (800*2/14)*5
+    elif destino == 3:
+        precio_gasolina = (300*2/14)*5
+    elif destino == 4:
+        precio_gasolina = (550*2/14)*5
+    return precio_gasolina
+
+def gasto_paseo(dias, destino):
+    if destino == 1:
+        precio_paseo = 200*dias
+    elif destino == 2:
+        precio_paseo = 400*dias
+    elif destino == 3:
+        precio_paseo = 250*dias
+    elif destino == 4:
+        precio_paseo = 300*dias
+    return precio_paseo
+
+precio_hotel, precio_gasolina, precio_paseo = gasto_hotel(dias), gasto_gasolina(destino), gasto_paseo(dias, destino)
+
+gastos = precio_hotel + precio_gasolina + precio_paseo
+
+if destino == 1:
+    destino = 'Salvador'
+elif destino == 2:
+    destino = 'Fortaleza'
+elif destino == 3:
+    destino = 'Natal'
+elif destino == 4:
+    destino = 'Aracaju'
+
+print(f'Con base en los gastos definidos, un viaje de {dias} días a {destino} desde Recife costaría {round(gastos, 2)} reales.')
