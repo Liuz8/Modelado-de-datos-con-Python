@@ -13,7 +13,7 @@ print(f'Nombres: {nombres}')
 print(f'Notas: {notas}')
 """
 
-from random import randint
+"""from random import randint
 
 nombres = ['Juan', 'Luis', 'Carlos', 'Angel']
 
@@ -25,4 +25,10 @@ codigo_estudiantes = []
 for i in range(len(nombres)):
     codigo_estudiantes.append((nombres[i], nombres[i][0]+str(genera_numero())))
 
-print(codigo_estudiantes)
+print(codigo_estudiantes)"""
+
+tupla = ('luis', 25)
+
+nombre, edad = tupla
+
+print(f'Nombre: {nombre}, Edad: {edad}')
