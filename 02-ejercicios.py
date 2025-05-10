@@ -26,4 +26,23 @@ lista_tupla = [(i, nombre) for i, nombre in enumerate(lista)]
 
 print(lista_tupla)"""
 
-# 
+# 4 - Crea una lista usando la comprensión de listas (list comprehension) que almacene solo el valor numérico de 
+# cada tupla en caso de que el primer elemento sea 'Apartamento', a partir de la siguiente lista de tuplas:
+
+"""alquiler = [('Apartamento', 1700), ('Apartamento', 1400), ('Casa', 2150), ('Apartamento', 1900), ('Casa', 1100)]
+
+alquilerApartamento = [i[1] for i in alquiler if i[0] == 'Apartamento']
+
+print(alquilerApartamento)"""
+
+# 5 - Crea un diccionario usando la comprensión de diccionarios (dict comprehension) en el que las claves estén en la lista 
+# meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'] 
+# y los valores estén en 
+# gasto = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360].
+
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+gasto = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360]
+
+diccionario = {mes:g for mes, g in zip(meses, gasto)}
+
+print(diccionario)
