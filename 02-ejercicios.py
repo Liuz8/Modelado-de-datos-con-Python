@@ -20,5 +20,9 @@ print(tercer_tupla)"""
 # crea un código para generar una lista de tuplas en la que cada tupla tenga el primer elemento como la posición del 
 # nombre en la lista original y el segundo elemento siendo el propio nombre.
 
-lista = ['Pedro', 'Júlia', 'Otávio', 'Eduardo'],
+lista = ['Pedro', 'Júlia', 'Otávio', 'Eduardo']
+
+lista_tupla = [(i, nombre) for i, nombre in enumerate(lista)]
+
+print(lista_tupla)
 
