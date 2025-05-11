@@ -72,4 +72,9 @@ print(ventas[0])"""
 # La clínica proporcionó parte de los valores y tu tarea es crear una lista de tuplas usando la comprensión de listas que 
 # contenga la etiqueta y el valor de la glucemia en cada tupla.
 
-glicemia = [129, 82, 60, 97, 101, 65, 62, 167, 87, 53, 58, 92, 66, 120, 109, 62, 86, 96, 103, 88, 155, 52, 89, 73]
+"""glicemia = [129, 82, 60, 97, 101, 65, 62, 167, 87, 53, 58, 92, 66, 120, 109, 62, 86, 96, 103, 88, 155, 52, 89, 73]
+
+etiqueta = [('Hipoglicemia' if i <= 70 else 'Normal' if i > 70 and i <= 99 else 'Alterada' if i >= 100 and i <= 125 else 'Diabetes', i) for i in glicemia]
+
+print(etiqueta)"""
+
