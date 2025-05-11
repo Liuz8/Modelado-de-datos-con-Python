@@ -78,3 +78,72 @@ etiqueta = [('Hipoglicemia' if i <= 70 else 'Normal' if i > 70 and i <= 99 else 
 
 print(etiqueta)"""
 
+# 8 - Un comercio electrónico tiene información de id de venta, cantidad vendida y precio del producto divididos en las siguientes listas:
+# La plataforma necesita estructurar estos datos en una tabla que contenga el valor total de la venta, que se obtiene 
+# multiplicando la cantidad por el precio unitario. Además, la tabla debe contener un encabezado indicando las columnas: 
+# 'id', 'cantidad', 'precio' y 'total'.
+# Crea una lista de tuplas en la que cada tupla tenga id, cantidad, precio y valor total, siendo la primera tupla el encabezado de la tabla.
+
+"""id = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+cantidad = [15, 12, 1, 15, 2, 11, 2, 12, 2, 4]
+precio = [93.0, 102.0, 18.0, 41.0, 122.0, 14.0, 71.0, 48.0, 14.0, 144.0]
+
+ventas = [('id', 'cantidad', 'precio', 'total')] + [
+    (i, c, p, p*c) for i,c,p in zip(id, cantidad, precio)
+]
+
+for fila in ventas:
+    print(f'{fila[0]:<10} | {fila[1]:<10} | {fila[2]:<10} | {fila[3]:<10}')"""
+
+# 9 - Una empresa tiene sucursales distribuidas en los estados de la región Sudeste de Brasil. 
+# En una de las tablas de registro de las sucursales, hay una columna que contiene la información de a qué estado pertenece: 
+# estados =['CMX', 'OAX', 'PUE', 'PUE', 'CMX', 'PUE', 'OAX', 'OAX', 'OAX', 'CMX', 'CMX', 'PUE', 'OAX', 'CMX', 'VER', 'PUE', 'VER', 'CMX', 'PUE', 'CMX', 'OAX', 'CMX', 'PUE'].
+
+# La empresa siempre está abriendo nuevas sucursales, por lo que la tabla está constantemente recibiendo nuevos registros y al 
+# gerente le gustaría tener la información actualizada de la cantidad de sucursales en cada estado.
+
+# A partir de la columna con la información de los estados, crea un diccionario utilizando la comprensión de diccionarios 
+# (dict comprehension) con la clave siendo el nombre de un estado y el valor siendo la cantidad de veces que aparece el estado en la lista.
+
+# Consejo: Puedes hacer un paso intermedio para generar una lista de listas en la que cada una de las listas tenga el nombre de solo un 
+# estado con valores repetidos.
+
+"""estados =['CMX', 'OAX', 'PUE', 'PUE', 'CMX', 'PUE','OAX', 'OAX', 'OAX', 'CMX', 'CMX',
+          'PUE', 'OAX', 'CMX', 'VER', 'PUE','VER', 'CMX', 'PUE', 'CMX', 'OAX', 'CMX','PUE']
+
+estados_contados = {estado:estados.count(estado) for estado in list(set(estados))}
+
+print(estados_contados)"""
+
+# 10 - En esa misma tabla de registro de sucursales, hay una columna con la información de la cantidad de personas 
+# empleadas y el gerente quisiera tener un agrupamiento de la suma de esas personas para cada estado. Las informaciones contenidas 
+# en la tabla son:
+
+# A partir de la lista de tuplas, crea un diccionario en el que las claves son los nombres
+#  de los estados únicos y los valores son las listas con el número de empleados referentes al estado. 
+# También crea un diccionario en el que las claves son los nombres de los estados y los valores son la suma de empleados por estado.
+
+empleados = [('CMX', 16), ('OAX', 8), ('PUE', 9), ('PUE', 6), ('CMX', 10), ('PUE', 4), ('OAX',9),  ('OAX', 7), 
+             ('OAX', 12), ('CMX', 7), ('CMX', 11), ('PUE',8), ('OAX',8), ('CMX',9), ('VER', 13), ('PUE', 5),  
+             ('VER', 9), ('CMX', 12), ('PUE', 10), ('CMX', 7), ('OAX', 14), ('CMX', 10), ('PUE', 12)]
+
+diccionario = {}
+
+for estado, cantidad in empleados:
+    if estado in diccionario:
+        diccionario[estado].append(cantidad)
+    else:
+        diccionario[estado] = [cantidad]
+
+suma_empleados = {estado: sum(cantidades) for estado, cantidades in diccionario.items()}
+
+for estado, cantidades in diccionario.items():
+    # Unimos la lista de cantidades en una cadena separada por comas
+    lista_empleados = ", ".join(str(c) for c in cantidades)
+    print(f"{estado:6} | {lista_empleados}")
+
+print('\n')
+print("Estado | Total de empleados")
+print("----------------------------")
+for estado, total in suma_empleados.items():
+    print(f"{estado:6} | {total}")
