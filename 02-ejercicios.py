@@ -40,9 +40,10 @@ print(alquilerApartamento)"""
 # y los valores estén en 
 # gasto = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360].
 
-meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+"""meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 gasto = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360]
 
 diccionario = {mes:g for mes, g in zip(meses, gasto)}
 
-print(diccionario)
+print(diccionario)"""
+
