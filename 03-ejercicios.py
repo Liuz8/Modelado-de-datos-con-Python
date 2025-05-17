@@ -23,11 +23,31 @@ print('¡Hola Mundo!')"""
 # Prueba el programa con un nombre presente en una de las claves del diccionario y con uno que no esté en el 
 # diccionario para verificar el mensaje de error.
 
-edades = {'Júlia': 16, 'Carol': 23, 'Alberto': 19, 'Roberta': 17}
+"""edades = {'Júlia': 16, 'Carol': 23, 'Alberto': 19, 'Roberta': 17}
 
 try:
     nombre = input('Ingresa un nombre: ')
     edad = edades[nombre]
     print(f'{nombre}: {edad}')
 except KeyError as e:
-    print(type(e), f'Nombre no encontrado {e}')
+    print(type(e), f'Nombre no encontrado {e}')"""
+
+# 3 - Crea una función que reciba una lista como parámetro y convierta todos los valores de la lista a 
+# flotantes. La función debe incluir un manejo de error indicando el tipo de error generado y devolver la 
+# lista si no ha ocurrido ningún error. Por último, debe tener la cláusula finally para imprimir el texto: 
+# 'Fin de la ejecución de la función'.
+
+def enteroAflotante(lista: list):
+    try:
+        lista_float = list(map(float,lista))
+        print(f'valores de lista convertidos a float\n{lista_float}')
+        return lista_float
+    except Exception as e:
+        print('Ocurrio un error: ', e)
+        print('Tipo de error: ', type(e))
+        print('Nombre del error: ', e.__class__.__name__)
+    finally:
+        print('Fin de la ejecución de la función')
+
+lista = [1,2, 'a']
+enteroAflotante(lista)
