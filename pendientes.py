@@ -69,7 +69,7 @@ except ValueError as e:
 #                   'y', 'fácil,', 'de', 'aprender', 'utilizado', 'en', 'diversos', 'campos,', 'desde',
 #                   'análisis', 'de', 'datos', 'hasta', 'inteligencia', 'artificial!']
 
-def verificar_puntuaciones(lista_palabras):
+"""def verificar_puntuaciones(lista_palabras):
     simbolos = [',', '.', '!', '?']
 
     for palabra in lista_palabras:
@@ -85,4 +85,5 @@ lista_no_tratada = ['Python', 'es', 'un', 'lenguaje', 'de', 'programación', 'po
                   'y', 'fácil,', 'de', 'aprender', 'utilizado', 'en', 'diversos', 'campos,', 'desde',
                   'análisis', 'de', 'datos', 'hasta', 'inteligencia', 'artificial!']
 
-verificar_puntuaciones(lista_no_tratada)
+verificar_puntuaciones(lista_no_tratada)"""
+
