@@ -37,7 +37,7 @@ except KeyError as e:
 # lista si no ha ocurrido ningún error. Por último, debe tener la cláusula finally para imprimir el texto: 
 # 'Fin de la ejecución de la función'.
 
-def enteroAflotante(lista: list):
+"""def enteroAflotante(lista: list):
     try:
         lista_float = list(map(float,lista))
         print(f'valores de lista convertidos a float\n{lista_float}')
@@ -50,4 +50,5 @@ def enteroAflotante(lista: list):
         print('Fin de la ejecución de la función')
 
 lista = [1,2, 'a']
-enteroAflotante(lista)
+enteroAflotante(lista)"""
+
